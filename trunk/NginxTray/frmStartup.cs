@@ -32,6 +32,11 @@ namespace NginxTray
             nginxprocess = Properties.Settings.Default.NginxProcess; // Take Nginx Directory from settings
 
             ProcM.StartProcess(nginxdirectory, nginxprocess);
+
+            if (Properties.Settings.Default.PHPEnable == true)
+            {
+                this.StartPHP(); // Call function to start PHP
+            }
         }
 
         // Stop Nginx
@@ -43,7 +48,41 @@ namespace NginxTray
 
             nginxprocess = Properties.Settings.Default.NginxProcess.Replace(".exe", "");
 
-            ProcM.StopProcess("nginx");
+            ProcM.StopProcess(nginxprocess);
+
+            this.StopPHP(); // Call function to stop PHP
+        }
+
+        // Start PHP
+        private void StartPHP()
+        {
+            ProcessManagement ProcM = new ProcessManagement();
+
+            string phpdirectory;
+
+            phpdirectory = Properties.Settings.Default.PHPDirectory; // Take Nginx Directory from settings
+
+            string phpprocess;
+
+            phpprocess = Properties.Settings.Default.PHPProcess; // Take Nginx Directory from settings
+
+            string phparguments;
+
+            phparguments = "-b " + Properties.Settings.Default.PHPAddress;
+
+            ProcM.StartProcess(phpdirectory, phpprocess, phparguments);
+        }
+
+        // Stop PHP
+        private void StopPHP()
+        {
+            ProcessManagement ProcM = new ProcessManagement();
+
+            string phpprocess;
+
+            phpprocess = Properties.Settings.Default.PHPProcess.Replace(".exe", "");
+
+            ProcM.StopProcess(phpprocess);
         }
 
         // Show Settings Form
@@ -60,11 +99,13 @@ namespace NginxTray
             form.Show();
         }
 
+        // Exit NginxTray
         private void ExitNginxMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        // Enable contextstripmenu with left click
         private void TryIcon_MouseClick(object sender, MouseEventArgs e)
         {
             System.Reflection.MethodInfo mi = typeof(NotifyIcon).GetMethod("ShowContextMenu", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);

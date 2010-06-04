@@ -8,5 +8,17 @@
     <Setting Name="NginxProcess" Type="System.String" Scope="User">
       <Value Profile="(Default)">nginx.exe</Value>
     </Setting>
+    <Setting Name="PHPEnable" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="PHPDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\php</Value>
+    </Setting>
+    <Setting Name="PHPProcess" Type="System.String" Scope="User">
+      <Value Profile="(Default)">php-cgi.exe</Value>
+    </Setting>
+    <Setting Name="PHPAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">127.0.0.1:9123</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

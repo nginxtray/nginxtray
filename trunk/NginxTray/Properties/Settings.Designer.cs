@@ -46,5 +46,53 @@ namespace NginxTray.Properties {
                 this["NginxProcess"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool PHPEnable {
+            get {
+                return ((bool)(this["PHPEnable"]));
+            }
+            set {
+                this["PHPEnable"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\php")]
+        public string PHPDirectory {
+            get {
+                return ((string)(this["PHPDirectory"]));
+            }
+            set {
+                this["PHPDirectory"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("php-cgi.exe")]
+        public string PHPProcess {
+            get {
+                return ((string)(this["PHPProcess"]));
+            }
+            set {
+                this["PHPProcess"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("127.0.0.1:9123")]
+        public string PHPAddress {
+            get {
+                return ((string)(this["PHPAddress"]));
+            }
+            set {
+                this["PHPAddress"] = value;
+            }
+        }
     }
 }

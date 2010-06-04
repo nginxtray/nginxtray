@@ -22,6 +22,8 @@ namespace NginxTray
 
             Proc.StartInfo.CreateNoWindow = true; //Set no display windows
 
+            Proc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden; // Set no display any window
+
             Proc.Start();
         }
 
