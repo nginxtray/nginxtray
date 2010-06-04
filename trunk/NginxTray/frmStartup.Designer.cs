@@ -39,6 +39,7 @@
             this.SettingsMenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.AboutNginxMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitNginxMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.RestartNginxMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ManageMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,58 +56,66 @@
             this.ManageMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StartNginxMenuItem,
             this.StopNginxMenuItem,
+            this.RestartNginxMenuItem,
             this.SettingsMenuSeparator1,
             this.SettingsNginxMenuItem,
             this.SettingsMenuSeparator2,
             this.AboutNginxMenuItem,
             this.ExitNginxMenuItem});
             this.ManageMenuStrip.Name = "ManageStrip";
-            this.ManageMenuStrip.Size = new System.Drawing.Size(159, 126);
+            this.ManageMenuStrip.Size = new System.Drawing.Size(165, 170);
             // 
             // StartNginxMenuItem
             // 
             this.StartNginxMenuItem.Name = "StartNginxMenuItem";
-            this.StartNginxMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.StartNginxMenuItem.Size = new System.Drawing.Size(164, 22);
             this.StartNginxMenuItem.Text = "Start Nginx";
             this.StartNginxMenuItem.Click += new System.EventHandler(this.StartNginxMenuItem_Click);
             // 
             // StopNginxMenuItem
             // 
             this.StopNginxMenuItem.Name = "StopNginxMenuItem";
-            this.StopNginxMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.StopNginxMenuItem.Size = new System.Drawing.Size(164, 22);
             this.StopNginxMenuItem.Text = "Stop Nginx";
             this.StopNginxMenuItem.Click += new System.EventHandler(this.StopNginxMenuItem_Click);
             // 
             // SettingsMenuSeparator1
             // 
             this.SettingsMenuSeparator1.Name = "SettingsMenuSeparator1";
-            this.SettingsMenuSeparator1.Size = new System.Drawing.Size(155, 6);
+            this.SettingsMenuSeparator1.Size = new System.Drawing.Size(161, 6);
             // 
             // SettingsNginxMenuItem
             // 
             this.SettingsNginxMenuItem.Name = "SettingsNginxMenuItem";
-            this.SettingsNginxMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.SettingsNginxMenuItem.Size = new System.Drawing.Size(164, 22);
             this.SettingsNginxMenuItem.Text = "Settings";
             this.SettingsNginxMenuItem.Click += new System.EventHandler(this.SettingsNginxMenuItem_Click);
             // 
             // SettingsMenuSeparator2
             // 
             this.SettingsMenuSeparator2.Name = "SettingsMenuSeparator2";
-            this.SettingsMenuSeparator2.Size = new System.Drawing.Size(155, 6);
+            this.SettingsMenuSeparator2.Size = new System.Drawing.Size(161, 6);
             // 
             // AboutNginxMenuItem
             // 
             this.AboutNginxMenuItem.Name = "AboutNginxMenuItem";
-            this.AboutNginxMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.AboutNginxMenuItem.Size = new System.Drawing.Size(164, 22);
             this.AboutNginxMenuItem.Text = "About NginxTray";
             this.AboutNginxMenuItem.Click += new System.EventHandler(this.AboutNginxMenuItem_Click);
             // 
             // ExitNginxMenuItem
             // 
             this.ExitNginxMenuItem.Name = "ExitNginxMenuItem";
-            this.ExitNginxMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.ExitNginxMenuItem.Size = new System.Drawing.Size(164, 22);
             this.ExitNginxMenuItem.Text = "Exit";
             this.ExitNginxMenuItem.Click += new System.EventHandler(this.ExitNginxMenuItem_Click);
+            // 
+            // RestartNginxMenuItem
+            // 
+            this.RestartNginxMenuItem.Name = "RestartNginxMenuItem";
+            this.RestartNginxMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.RestartNginxMenuItem.Text = "Restart Nginx";
+            this.RestartNginxMenuItem.Click += new System.EventHandler(this.RestartNginxMenuItem_Click);
             // 
             // frmStartup
             // 
@@ -133,6 +142,7 @@
         private System.Windows.Forms.ToolStripSeparator SettingsMenuSeparator2;
         private System.Windows.Forms.ToolStripMenuItem ExitNginxMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AboutNginxMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem RestartNginxMenuItem;
     }
 }
 

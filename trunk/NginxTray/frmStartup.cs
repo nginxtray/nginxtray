@@ -18,8 +18,8 @@ namespace NginxTray
             base.SetVisibleCore(false); // Hide this form at startup
         }
 
-        // Start Nginx
-        private void StartNginxMenuItem_Click(object sender, EventArgs e)
+        // Start Nginx function
+        private void StartNginx()
         {
             ProcessManagement ProcM = new ProcessManagement();
 
@@ -32,15 +32,10 @@ namespace NginxTray
             nginxprocess = Properties.Settings.Default.NginxProcess; // Take Nginx Directory from settings
 
             ProcM.StartProcess(nginxdirectory, nginxprocess);
-
-            if (Properties.Settings.Default.PHPEnable == true)
-            {
-                this.StartPHP(); // Call function to start PHP
-            }
         }
 
-        // Stop Nginx
-        private void StopNginxMenuItem_Click(object sender, EventArgs e)
+        // Stop Nginx function
+        private void StopNginx()
         {
             ProcessManagement ProcM = new ProcessManagement();
 
@@ -49,11 +44,9 @@ namespace NginxTray
             nginxprocess = Properties.Settings.Default.NginxProcess.Replace(".exe", "");
 
             ProcM.StopProcess(nginxprocess);
-
-            this.StopPHP(); // Call function to stop PHP
         }
 
-        // Start PHP
+        // Start PHP function
         private void StartPHP()
         {
             ProcessManagement ProcM = new ProcessManagement();
@@ -73,7 +66,7 @@ namespace NginxTray
             ProcM.StartProcess(phpdirectory, phpprocess, phparguments);
         }
 
-        // Stop PHP
+        // Stop PHP function
         private void StopPHP()
         {
             ProcessManagement ProcM = new ProcessManagement();
@@ -83,6 +76,40 @@ namespace NginxTray
             phpprocess = Properties.Settings.Default.PHPProcess.Replace(".exe", "");
 
             ProcM.StopProcess(phpprocess);
+        }
+
+        // Start Nginx Group
+        private void StartNginxMenuItem_Click(object sender, EventArgs e)
+        {
+            this.StartNginx(); // Call function to start Nginx
+
+            if (Properties.Settings.Default.PHPEnable == true)
+            {
+                this.StartPHP(); // Call function to start PHP
+            }
+        }
+
+        // Stop Nginx Group
+        private void StopNginxMenuItem_Click(object sender, EventArgs e)
+        {
+            this.StopNginx(); // Call function to stop Nginx
+
+            this.StopPHP(); // Call function to stop PHP
+        }
+
+        // Restart Nginx Group
+        private void RestartNginxMenuItem_Click(object sender, EventArgs e)
+        {
+            this.StopNginx(); // Call function to stop Nginx
+
+            this.StopPHP(); // Call function to stop PHP
+
+            this.StartNginx(); // Call function to start Nginx
+
+            if (Properties.Settings.Default.PHPEnable == true)
+            {
+                this.StartPHP(); // Call function to start PHP
+            }
         }
 
         // Show Settings Form
