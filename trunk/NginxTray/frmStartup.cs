@@ -31,7 +31,10 @@ namespace NginxTray
 
             nginxprocess = Properties.Settings.Default.NginxProcess; // Take Nginx Directory from settings
 
-            ProcM.StartProcess(nginxdirectory, nginxprocess);
+            if (ProcM.StartProcess(nginxdirectory, nginxprocess) == false) // If there are problems, show a ballontip error
+            {
+                TrayIcon.ShowBalloonTip(20000, "Nginx does not start", "The file path or process name could be wrong", ToolTipIcon.Error);
+            };
         }
 
         // Stop Nginx function
@@ -63,7 +66,10 @@ namespace NginxTray
 
             phparguments = "-b " + Properties.Settings.Default.PHPAddress;
 
-            ProcM.StartProcess(phpdirectory, phpprocess, phparguments);
+            if (ProcM.StartProcess(phpdirectory, phpprocess, phparguments) == false) // If there are problems, show a ballontip error
+            {
+                TrayIcon.ShowBalloonTip(20000, "PHP does not start", "The file path, process name or address could be wrong", ToolTipIcon.Error);
+            };
         }
 
         // Stop PHP function
@@ -136,7 +142,7 @@ namespace NginxTray
         private void TryIcon_MouseClick(object sender, MouseEventArgs e)
         {
             System.Reflection.MethodInfo mi = typeof(NotifyIcon).GetMethod("ShowContextMenu", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
-            mi.Invoke(TryIcon, null);
+            mi.Invoke(TrayIcon, null);
         }
 
     }

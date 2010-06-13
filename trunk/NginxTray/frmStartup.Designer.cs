@@ -30,26 +30,26 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStartup));
-            this.TryIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.ManageMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.StartNginxMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.StopNginxMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.RestartNginxMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SettingsMenuSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.SettingsNginxMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SettingsMenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.AboutNginxMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitNginxMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.RestartNginxMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ManageMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // TryIcon
+            // TrayIcon
             // 
-            this.TryIcon.ContextMenuStrip = this.ManageMenuStrip;
-            this.TryIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("TryIcon.Icon")));
-            this.TryIcon.Text = "NginxTray";
-            this.TryIcon.Visible = true;
-            this.TryIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TryIcon_MouseClick);
+            this.TrayIcon.ContextMenuStrip = this.ManageMenuStrip;
+            this.TrayIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("TrayIcon.Icon")));
+            this.TrayIcon.Text = "NginxTray";
+            this.TrayIcon.Visible = true;
+            this.TrayIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TryIcon_MouseClick);
             // 
             // ManageMenuStrip
             // 
@@ -78,6 +78,13 @@
             this.StopNginxMenuItem.Size = new System.Drawing.Size(164, 22);
             this.StopNginxMenuItem.Text = "Stop Nginx";
             this.StopNginxMenuItem.Click += new System.EventHandler(this.StopNginxMenuItem_Click);
+            // 
+            // RestartNginxMenuItem
+            // 
+            this.RestartNginxMenuItem.Name = "RestartNginxMenuItem";
+            this.RestartNginxMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.RestartNginxMenuItem.Text = "Restart Nginx";
+            this.RestartNginxMenuItem.Click += new System.EventHandler(this.RestartNginxMenuItem_Click);
             // 
             // SettingsMenuSeparator1
             // 
@@ -110,18 +117,12 @@
             this.ExitNginxMenuItem.Text = "Exit";
             this.ExitNginxMenuItem.Click += new System.EventHandler(this.ExitNginxMenuItem_Click);
             // 
-            // RestartNginxMenuItem
-            // 
-            this.RestartNginxMenuItem.Name = "RestartNginxMenuItem";
-            this.RestartNginxMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.RestartNginxMenuItem.Text = "Restart Nginx";
-            this.RestartNginxMenuItem.Click += new System.EventHandler(this.RestartNginxMenuItem_Click);
-            // 
             // frmStartup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmStartup";
             this.Opacity = 0D;
             this.ShowInTaskbar = false;
@@ -133,7 +134,7 @@
 
         #endregion
 
-        private System.Windows.Forms.NotifyIcon TryIcon;
+        private System.Windows.Forms.NotifyIcon TrayIcon;
         private System.Windows.Forms.ContextMenuStrip ManageMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem StartNginxMenuItem;
         private System.Windows.Forms.ToolStripMenuItem StopNginxMenuItem;

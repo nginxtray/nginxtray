@@ -9,7 +9,7 @@ namespace NginxTray
     {
 
         //Start a new process
-        public void StartProcess(string address, string process, string arguments = "")
+        public bool StartProcess(string address, string process, string arguments = "")
         {
 
             Process Proc = new Process();
@@ -24,7 +24,16 @@ namespace NginxTray
 
             Proc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden; // Set no display any window
 
-            Proc.Start();
+            try
+            {
+                Proc.Start();
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
         }
 
         //Stop a process

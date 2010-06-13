@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
             this.buttonOk = new System.Windows.Forms.Button();
             this.linkLabelSite = new System.Windows.Forms.LinkLabel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.LicenseBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,14 +42,18 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
+            this.checkupdateButton = new System.Windows.Forms.Button();
+            this.CheckUpdateprogressBar = new System.Windows.Forms.ProgressBar();
+            this.CheckUpdateLabel = new System.Windows.Forms.Label();
+            this.CheckUpdateWorker = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonOk
             // 
-            this.buttonOk.Location = new System.Drawing.Point(351, 279);
+            this.buttonOk.Location = new System.Drawing.Point(381, 279);
             this.buttonOk.Name = "buttonOk";
-            this.buttonOk.Size = new System.Drawing.Size(101, 27);
+            this.buttonOk.Size = new System.Drawing.Size(72, 27);
             this.buttonOk.TabIndex = 0;
             this.buttonOk.Text = "OK";
             this.buttonOk.UseVisualStyleBackColor = true;
@@ -66,15 +70,15 @@
             this.linkLabelSite.Text = "http://nginxtray.codeplex.com/";
             this.linkLabelSite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSite_LinkClicked);
             // 
-            // textBox1
+            // LicenseBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(140, 128);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(312, 145);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = resources.GetString("textBox1.Text");
+            this.LicenseBox.Location = new System.Drawing.Point(140, 128);
+            this.LicenseBox.Multiline = true;
+            this.LicenseBox.Name = "LicenseBox";
+            this.LicenseBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.LicenseBox.Size = new System.Drawing.Size(312, 145);
+            this.LicenseBox.TabIndex = 2;
+            this.LicenseBox.Text = resources.GetString("LicenseBox.Text");
             // 
             // label1
             // 
@@ -137,7 +141,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 13);
             this.label7.TabIndex = 9;
-            this.label7.Text = "Versione: 0.6 RC1";
+            this.label7.Text = "Versione: 0.7 RC2";
             // 
             // label8
             // 
@@ -163,16 +167,54 @@
             this.logoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.Image")));
             this.logoPictureBox.Location = new System.Drawing.Point(0, 0);
             this.logoPictureBox.Name = "logoPictureBox";
-            this.logoPictureBox.Size = new System.Drawing.Size(131, 313);
+            this.logoPictureBox.Size = new System.Drawing.Size(131, 311);
             this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logoPictureBox.TabIndex = 13;
             this.logoPictureBox.TabStop = false;
+            // 
+            // checkupdateButton
+            // 
+            this.checkupdateButton.Location = new System.Drawing.Point(140, 279);
+            this.checkupdateButton.Name = "checkupdateButton";
+            this.checkupdateButton.Size = new System.Drawing.Size(88, 27);
+            this.checkupdateButton.TabIndex = 14;
+            this.checkupdateButton.Text = "Check Update";
+            this.checkupdateButton.UseVisualStyleBackColor = true;
+            this.checkupdateButton.Click += new System.EventHandler(this.checkupdateButton_Click);
+            // 
+            // CheckUpdateprogressBar
+            // 
+            this.CheckUpdateprogressBar.Location = new System.Drawing.Point(140, 279);
+            this.CheckUpdateprogressBar.MarqueeAnimationSpeed = 0;
+            this.CheckUpdateprogressBar.Name = "CheckUpdateprogressBar";
+            this.CheckUpdateprogressBar.Size = new System.Drawing.Size(28, 27);
+            this.CheckUpdateprogressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.CheckUpdateprogressBar.TabIndex = 15;
+            this.CheckUpdateprogressBar.Visible = false;
+            // 
+            // CheckUpdateLabel
+            // 
+            this.CheckUpdateLabel.AutoSize = true;
+            this.CheckUpdateLabel.Location = new System.Drawing.Point(174, 286);
+            this.CheckUpdateLabel.Name = "CheckUpdateLabel";
+            this.CheckUpdateLabel.Size = new System.Drawing.Size(102, 13);
+            this.CheckUpdateLabel.TabIndex = 16;
+            this.CheckUpdateLabel.Text = "Click Check Update";
+            this.CheckUpdateLabel.Visible = false;
+            // 
+            // CheckUpdateWorker
+            // 
+            this.CheckUpdateWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.CheckUpdateWorker_DoWork);
+            this.CheckUpdateWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.CheckUpdateWorker_RunWorkerCompleted);
             // 
             // AboutBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(465, 313);
+            this.ClientSize = new System.Drawing.Size(465, 311);
+            this.Controls.Add(this.CheckUpdateLabel);
+            this.Controls.Add(this.CheckUpdateprogressBar);
+            this.Controls.Add(this.checkupdateButton);
             this.Controls.Add(this.logoPictureBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -183,7 +225,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.LicenseBox);
             this.Controls.Add(this.linkLabelSite);
             this.Controls.Add(this.buttonOk);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -199,7 +241,7 @@
 
         private System.Windows.Forms.Button buttonOk;
         private System.Windows.Forms.LinkLabel linkLabelSite;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox LicenseBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -210,5 +252,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox logoPictureBox;
+        private System.Windows.Forms.Button checkupdateButton;
+        private System.Windows.Forms.ProgressBar CheckUpdateprogressBar;
+        private System.Windows.Forms.Label CheckUpdateLabel;
+        private System.ComponentModel.BackgroundWorker CheckUpdateWorker;
     }
 }

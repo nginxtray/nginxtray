@@ -62,6 +62,8 @@ namespace NginxTray
             Properties.Settings.Default.PHPProcess = textBoxPHPProcess.Text;
 
             Properties.Settings.Default.PHPAddress = textBoxPHPPort.Text;
+
+            Properties.Settings.Default.Save();
         }
 
     }
