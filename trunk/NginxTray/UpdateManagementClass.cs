@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Xml;
+using System.Text.RegularExpressions;
 
 namespace NginxTray
 {
@@ -44,8 +45,7 @@ namespace NginxTray
                 XmlDocument rssVersion = new XmlDocument();
                 rssVersion.Load("http://nginxtray.codeplex.com/Project/ProjectRss.aspx");
                 XmlNode curVersion = rssVersion.SelectSingleNode("//channel/item/description/text()");
-                versione = curVersion.InnerText.Replace("<div>", "");
-                versione = versione.Replace("</div>", "");
+                versione = Regex.Replace(curVersion.InnerText, @"<(.|\n)*?>", string.Empty);
                 versione = versione.Replace("NginxTray ", "");
                 CurrentVersion = versione;
             }
