@@ -9,7 +9,7 @@ namespace NginxTray
     
     class UpdateManagementClass
     {
-        public const string version = "0.7 RC2"; // Actual software version used
+        public const string version = "1.0"; // Actual software version used
 
         public bool CheckFailed = false; // Set true if unable to check a new version
 
