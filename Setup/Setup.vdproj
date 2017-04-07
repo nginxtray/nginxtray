@@ -203,7 +203,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:NginxTray"
         "ProductCode" = "8:{45707901-FF66-4250-A283-D5680FB00670}"
-        "PackageCode" = "8:{BF414757-74CF-445C-8D60-FF675E854230}"
+        "PackageCode" = "8:{CFA158C9-A13D-4ACD-B3A9-968FA8313E4B}"
         "UpgradeCode" = "8:{BC0601BC-D06B-4436-B7DE-BEAC0618324A}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -483,8 +483,8 @@
                             "Type" = "3:3"
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
-                            "Setting" = "3:1"
-                            "Value" = "8:#1202"
+                            "Setting" = "3:2"
+                            "Value" = "8:Copyright © 2010-2017 by Emiliano del Gobbo <https://github.com/nginxtray/nginxtray/>"
                             "DefaultValue" = "8:#1202"
                             "UsePlugInResources" = "11:TRUE"
                             }
@@ -660,6 +660,7 @@
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
                             "Setting" = "3:2"
+                            "Value" = "8:_065746ADCFA14EA1844617C4A15A076D"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "Sunken"
@@ -727,8 +728,8 @@
                             "Type" = "3:3"
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
-                            "Setting" = "3:1"
-                            "Value" = "8:#1202"
+                            "Setting" = "3:2"
+                            "Value" = "8:Copyright © 2010-2017 by Emiliano del Gobbo <https://github.com/nginxtray/nginxtray/>"
                             "DefaultValue" = "8:#1202"
                             "UsePlugInResources" = "11:TRUE"
                             }
@@ -798,7 +799,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_8C34A36AF8B143C3B525C9C994D8C090"
             {
-            "SourcePath" = "8:..\\NginxTray\\obj\\x86\\Debug\\NginxTray.exe"
+            "SourcePath" = "8:..\\NginxTray\\obj\\x86\\Release\\NginxTray.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_2AAA78FAB36E4673A2FC89FA759701FD"
