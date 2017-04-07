@@ -1,2 +1,5 @@
 theme: jekyll-theme-cayman
 show_downloads: true
+title: "NginxTray"
+description: "NginxTray allows you to easily manage the Nginx Web Server and PHP by a Tray icon."
+google_analytics: UA-97010925-1
