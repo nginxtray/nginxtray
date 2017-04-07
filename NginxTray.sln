@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NginxTray", "NginxTray\NginxTray.csproj", "{EBEDE9B7-2CE0-4CEE-88EE-2096C5FBC98E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E5FF8081-6BBB-4728-BD90-E52499DFEE20}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		AUTHORS.md = AUTHORS.md
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBEDE9B7-2CE0-4CEE-88EE-2096C5FBC98E}.Debug|x86.ActiveCfg = Debug|x86
+		{EBEDE9B7-2CE0-4CEE-88EE-2096C5FBC98E}.Debug|x86.Build.0 = Debug|x86
+		{EBEDE9B7-2CE0-4CEE-88EE-2096C5FBC98E}.Release|x86.ActiveCfg = Release|x86
+		{EBEDE9B7-2CE0-4CEE-88EE-2096C5FBC98E}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

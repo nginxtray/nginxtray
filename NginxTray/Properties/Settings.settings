@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="NginxTray.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="NginxDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\nginx</Value>
+    </Setting>
+    <Setting Name="NginxProcess" Type="System.String" Scope="User">
+      <Value Profile="(Default)">nginx.exe</Value>
+    </Setting>
+    <Setting Name="PHPEnable" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="PHPDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\php</Value>
+    </Setting>
+    <Setting Name="PHPProcess" Type="System.String" Scope="User">
+      <Value Profile="(Default)">php-cgi.exe</Value>
+    </Setting>
+    <Setting Name="PHPAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">127.0.0.1:9123</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
