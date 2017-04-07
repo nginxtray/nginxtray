@@ -56,7 +56,9 @@ namespace NginxTray
         // Check update button
         private void checkupdateButton_Click(object sender, EventArgs e)
         {
-            checkupdateButton.Visible = false;
+            System.Diagnostics.Process.Start("https://github.com/nginxtray/nginxtray/releases");
+
+            /*checkupdateButton.Visible = false;
 
             CheckUpdateprogressBar.MarqueeAnimationSpeed = 30;
 
@@ -66,9 +68,9 @@ namespace NginxTray
 
             CheckUpdateLabel.Visible = true;
 
-            CheckUpdateWorker.RunWorkerAsync();
+            CheckUpdateWorker.RunWorkerAsync();*/
 
-            
+
         }
 
         // Work to check new update

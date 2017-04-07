@@ -31,7 +31,7 @@ namespace NginxTray
     
     class UpdateManagementClass
     {
-        public const string version = "1.0"; // Actual software version used
+        public const string version = "1.0.1"; // Actual software version used
 
         public bool CheckFailed = false; // Set true if unable to check a new version
 
@@ -65,8 +65,8 @@ namespace NginxTray
             try
             {
                 XmlDocument rssVersion = new XmlDocument();
-                rssVersion.Load("http://nginxtray.codeplex.com/Project/ProjectRss.aspx");
-                XmlNode curVersion = rssVersion.SelectSingleNode("//channel/item/description/text()");
+                rssVersion.Load("https://github.com/nginxtray/nginxtray/releases.atom");
+                XmlNode curVersion = rssVersion.SelectSingleNode("descendant::entry");
                 versione = Regex.Replace(curVersion.InnerText, @"<(.|\n)*?>", string.Empty);
                 versione = versione.Replace("NginxTray ", "");
                 CurrentVersion = versione;

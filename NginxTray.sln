@@ -14,6 +14,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "NginxTraySetup", "Setup\Setup.vdproj", "{BB85A666-79B0-4150-9239-892C877370B5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EBEDE9B7-2CE0-4CEE-88EE-2096C5FBC98E} = {EBEDE9B7-2CE0-4CEE-88EE-2096C5FBC98E}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -24,6 +29,10 @@ Global
 		{EBEDE9B7-2CE0-4CEE-88EE-2096C5FBC98E}.Debug|x86.Build.0 = Debug|x86
 		{EBEDE9B7-2CE0-4CEE-88EE-2096C5FBC98E}.Release|x86.ActiveCfg = Release|x86
 		{EBEDE9B7-2CE0-4CEE-88EE-2096C5FBC98E}.Release|x86.Build.0 = Release|x86
+		{BB85A666-79B0-4150-9239-892C877370B5}.Debug|x86.ActiveCfg = Debug
+		{BB85A666-79B0-4150-9239-892C877370B5}.Debug|x86.Build.0 = Debug
+		{BB85A666-79B0-4150-9239-892C877370B5}.Release|x86.ActiveCfg = Release
+		{BB85A666-79B0-4150-9239-892C877370B5}.Release|x86.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
